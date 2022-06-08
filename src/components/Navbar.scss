@@ -1,0 +1,89 @@
+@use '../sass/mixins.scss';
+@use '../sass/variables';
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.1875rem;
+  padding-bottom: 1.5rem;
+  &__menu {
+    display: none;
+
+    &.active {
+      display: block;
+      position: fixed;
+      padding-top: 5.75rem;
+      padding-left: 1.5rem;
+      color: variables.$color-black;
+      width: 15.625rem;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: variables.$color-white;
+      z-index: 5;
+    }
+    &-items {
+      font-size: 1.125rem;
+      font-weight: variables.$font-weight-bold;
+      margin-bottom: 1.25rem;
+    }
+  }
+  &__logo {
+    margin-left: 1rem;
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+    & svg path {
+      fill: variables.$color-black;
+    }
+  }
+  &__avatar-container {
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.38625rem;
+  }
+}
+.menu-btn {
+  z-index: 10;
+}
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background: rgb(0, 0, 0, 0.75);
+  mix-blend-mode: normal;
+}
+.cart-icon {
+  position: relative;
+}
+.cart-notification {
+  position: absolute;
+  top: -6px;
+  right: -6.18px;
+  width: 19px;
+  height: 13px;
+  border-radius: 3rem;
+  background-color: variables.$color-orange;
+  display: grid;
+  place-content: center;
+  & span {
+    color: variables.$color-white;
+    font-size: 0.625rem;
+    line-height: 12px;
+    font-weight: variables.$font-weight-bold;
+  }
+}

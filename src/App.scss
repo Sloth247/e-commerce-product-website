@@ -1,0 +1,66 @@
+@use './sass/mixins.scss';
+@use './sass/variables';
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+*:focus {
+  outline: dotted 5px #ffd60a;
+  outline-offset: 1px;
+}
+
+body {
+  font-family: variables.$font-primary;
+  font-size: 0.9375rem;
+  font-weight: variables.$font-weight-regular;
+  line-height: 24px;
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wrapper {
+  padding: 0 1.5rem;
+}
+
+.main {
+  position: relative; // for CartModal
+}

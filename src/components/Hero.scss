@@ -1,0 +1,52 @@
+@use '../sass/mixins.scss';
+@use '../sass/variables';
+
+.swiper {
+  width: 100%;
+  height: 18.75rem;
+}
+.swiper-slide {
+  background-size: contain;
+  background-position: top center;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: transparent;
+}
+.swiper-button-prev {
+  background: url('../assets/icon-previous.svg'), variables.$color-white;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.swiper-button-next {
+  background: url('../assets/icon-next.svg'), variables.$color-white;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.swiper-thumbs {
+  margin: 2.5rem 3.3125rem;
+  display: none;
+  @include mixins.mq(desktop) {
+    display: block;
+  }
+}
+.swiper-thumbs .swiper-slide {
+  width: 5.5rem;
+  height: 5.5rem;
+
+  & img {
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+  }
+}

@@ -1,0 +1,107 @@
+.content {
+  padding-top: 1.5rem;
+  padding-bottom: 5.5rem;
+}
+.content__brand {
+  font-size: 0.75rem;
+  color: hsl(26deg, 100%, 55%);
+  text-transform: uppercase;
+  line-height: 15px;
+  letter-spacing: 1.84615px;
+}
+.content__product-name {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  margin-top: 1.1875rem;
+  margin-bottom: 1.9375rem;
+}
+.content__description {
+  color: hsl(217deg, 9%, 45%);
+  line-height: 25px;
+  margin-bottom: 1.5rem;
+}
+.content__price-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.content__current-price {
+  display: flex;
+  align-items: center;
+}
+.content__current-price span:first-child {
+  font-size: 1.75rem;
+  font-weight: bold;
+  line-height: 35px;
+  margin-right: 1rem;
+}
+.content__current-price span:last-child {
+  font-size: 1rem;
+  line-height: 20px;
+  color: hsl(26deg, 100%, 55%);
+  font-weight: bold;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  background-color: hsl(25deg, 100%, 94%);
+  border-radius: 5px;
+}
+.content__prev-price {
+  font-size: 1rem;
+  line-height: 26px;
+  color: hsl(220deg, 14%, 75%);
+  font-weight: 700;
+  text-decoration: line-through;
+}
+.content__input-container {
+  width: 100%;
+  background-color: hsl(223deg, 64%, 98%);
+  border: 0;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+input[type=number] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  border-width: 0px;
+  outline: none;
+  background-color: transparent;
+  width: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cart-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 1rem;
+  background-color: hsl(26deg, 100%, 55%);
+  color: white;
+  font-size: 1rem;
+  line-height: 20px;
+  font-weight: 700;
+  width: 100%;
+  box-shadow: 0px 20px 50px -20px hsl(26deg, 100%, 55%);
+  border-radius: 10px;
+}
+.cart-btn svg path {
+  fill: #fff;
+}
+.cart-btn svg {
+  margin-right: 1rem;
+}
+
+/*# sourceMappingURL=Content.css.map */

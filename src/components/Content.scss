@@ -1,0 +1,106 @@
+@use '../sass/mixins.scss';
+@use '../sass/variables.scss';
+
+.content {
+  padding-top: 1.5rem;
+  padding-bottom: 5.5rem;
+  &__brand {
+    font-size: 0.75rem;
+    color: variables.$color-orange;
+    text-transform: uppercase;
+    line-height: 15px;
+    letter-spacing: 1.84615px;
+  }
+  &__product-name {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    margin-top: 1.1875rem;
+    margin-bottom: 1.9375rem;
+  }
+  &__description {
+    color: variables.$color-dark-grayish-blue;
+    line-height: 25px;
+    margin-bottom: 1.5rem;
+  }
+  &__price-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  &__current-price {
+    display: flex;
+    align-items: center;
+    & span:first-child {
+      font-size: 1.75rem;
+      font-weight: bold;
+      line-height: 35px;
+      margin-right: 1rem;
+    }
+    & span:last-child {
+      font-size: 1rem;
+      line-height: 20px;
+      color: variables.$color-orange;
+      font-weight: bold;
+      padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+      background-color: variables.$color-pale-orange;
+      border-radius: 5px;
+    }
+  }
+  &__prev-price {
+    font-size: 1rem;
+    line-height: 26px;
+    color: variables.$color-grayish-blue;
+    font-weight: variables.$font-weight-bold;
+    text-decoration: line-through;
+  }
+  &__input-container {
+    width: 100%;
+    background-color: variables.$color-light-grayish-blue;
+    border: 0;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+}
+input[type='number'] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  border-width: 0px;
+  outline: none;
+  background-color: transparent;
+  width: 1rem;
+  font-size: 1rem;
+  font-weight: variables.$font-weight-bold;
+  font-family: inherit;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cart-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 1rem;
+  background-color: variables.$color-orange;
+  color: white;
+  font-size: 1rem;
+  line-height: 20px;
+  font-weight: variables.$font-weight-bold;
+  width: 100%;
+  box-shadow: 0px 20px 50px -20px variables.$color-orange;
+  border-radius: 10px;
+  & svg path {
+    fill: #fff;
+  }
+  & svg {
+    margin-right: 1rem;
+  }
+}
