@@ -24,6 +24,16 @@ body {
   max-width: 100%;
   min-height: 100vh;
 }
+@media screen and (min-width: 34em) {
+  body {
+    padding: 1.75rem 6rem 8.25rem 6rem;
+  }
+}
+@media screen and (min-width: 62.5em) {
+  body {
+    padding: 1.75rem 10.3125rem 8.25rem 10.3125rem;
+  }
+}
 
 img {
   width: 100%;
@@ -63,6 +73,14 @@ button {
 
 .main {
   position: relative;
+}
+@media screen and (min-width: 34em) {
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5.625rem 3rem 0 3rem;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

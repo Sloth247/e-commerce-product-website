@@ -22,6 +22,7 @@ function App() {
       </header>
       <main className="main">
         <Hero />
+
         <Content
           amount={amount}
           setAmount={setAmount}

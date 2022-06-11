@@ -4,18 +4,37 @@
 .content {
   padding-top: 1.5rem;
   padding-bottom: 5.5rem;
+
+  @include mixins.mq(tablet) {
+    align-self: center;
+    padding: 0;
+  }
+  @include mixins.mq(large) {
+    max-width: 27.8125rem;
+  }
   &__brand {
     font-size: 0.75rem;
     color: variables.$color-orange;
     text-transform: uppercase;
     line-height: 15px;
     letter-spacing: 1.84615px;
+    @include mixins.mq(tablet) {
+      font-size: 0.8125rem;
+      line-height: 16px;
+      letter-spacing: 2px;
+    }
   }
   &__product-name {
     font-size: 1.75rem;
     line-height: 2rem;
     margin-top: 1.1875rem;
     margin-bottom: 1.9375rem;
+    @include mixins.mq(desktop) {
+      font-size: 2.75rem;
+      line-height: 48px;
+      margin-top: 1.6875rem;
+      margin-bottom: 2rem;
+    }
   }
   &__description {
     color: variables.$color-dark-grayish-blue;
@@ -27,10 +46,19 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1.5rem;
+    @include mixins.mq(tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
   }
   &__current-price {
     display: flex;
     align-items: center;
+    @include mixins.mq(tablet) {
+      margin-bottom: 0.625rem;
+    }
     & span:first-child {
       font-size: 1.75rem;
       font-weight: bold;
@@ -64,6 +92,16 @@
     align-items: center;
     border-radius: 10px;
     margin-bottom: 1rem;
+    @include mixins.mq(desktop) {
+      margin-bottom: 0;
+      margin-right: 1rem;
+      max-width: 9.8125rem;
+    }
+  }
+  &__form {
+    @include mixins.mq(desktop) {
+      display: flex;
+    }
   }
 }
 input[type='number'] {
@@ -97,6 +135,9 @@ input[type='number']::-webkit-outer-spin-button {
   width: 100%;
   box-shadow: 0px 20px 50px -20px variables.$color-orange;
   border-radius: 10px;
+  @include mixins.mq(desktop) {
+    box-shadow: none;
+  }
   & svg path {
     fill: #fff;
   }

@@ -29,20 +29,28 @@ export default function Navbar({
           <a href={urlHome} className="nav__logo">
             <img src={Logo} alt="sneakers" />
           </a>
+          <ul
+            className={expanded ? 'nav__menu active' : 'nav__menu'}
+            id="mobile-menu"
+          >
+            <li className="nav__menu-items">
+              <a href={urlHome}>Collections</a>
+            </li>
+            <li className="nav__menu-items">
+              <a href={urlHome}>Men</a>
+            </li>
+            <li className="nav__menu-items">
+              <a href={urlHome}>Women</a>
+            </li>
+            <li className="nav__menu-items">
+              <a href={urlHome}>About</a>
+            </li>
+            <li className="nav__menu-items">
+              <a href={urlHome}>Contact</a>
+            </li>
+          </ul>
+          {expanded && <div className="menu-overlay"></div>}
         </div>
-        <ul
-          className={expanded ? 'nav__menu active' : 'nav__menu'}
-          id="mobile-menu"
-        >
-          <li className="nav__menu-items">
-            <a>Collections</a>
-          </li>
-          <li className="nav__menu-items">Men</li>
-          <li className="nav__menu-items">Women</li>
-          <li className="nav__menu-items">About</li>
-          <li className="nav__menu-items">Contact</li>
-        </ul>
-        {expanded && <div className="menu-overlay"></div>}
         <div className="nav__icon-container">
           <CartButton
             cartExpanded={cartExpanded}

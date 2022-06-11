@@ -2,6 +2,17 @@
   padding-top: 1.5rem;
   padding-bottom: 5.5rem;
 }
+@media screen and (min-width: 34em) {
+  .content {
+    align-self: center;
+    padding: 0;
+  }
+}
+@media screen and (min-width: 80em) {
+  .content {
+    max-width: 27.8125rem;
+  }
+}
 .content__brand {
   font-size: 0.75rem;
   color: hsl(26deg, 100%, 55%);
@@ -9,14 +20,29 @@
   line-height: 15px;
   letter-spacing: 1.84615px;
 }
+@media screen and (min-width: 34em) {
+  .content__brand {
+    font-size: 0.8125rem;
+    line-height: 16px;
+    letter-spacing: 2px;
+  }
+}
 .content__product-name {
   font-size: 1.75rem;
   line-height: 2rem;
   margin-top: 1.1875rem;
   margin-bottom: 1.9375rem;
 }
+@media screen and (min-width: 62.5em) {
+  .content__product-name {
+    font-size: 2.75rem;
+    line-height: 48px;
+    margin-top: 1.6875rem;
+    margin-bottom: 2rem;
+  }
+}
 .content__description {
-  color: hsl(217deg, 9%, 45%);
+  color: #68707d;
   line-height: 25px;
   margin-bottom: 1.5rem;
 }
@@ -26,9 +52,22 @@
   justify-content: space-between;
   margin-bottom: 1.5rem;
 }
+@media screen and (min-width: 34em) {
+  .content__price-container {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+}
 .content__current-price {
   display: flex;
   align-items: center;
+}
+@media screen and (min-width: 34em) {
+  .content__current-price {
+    margin-bottom: 0.625rem;
+  }
 }
 .content__current-price span:first-child {
   font-size: 1.75rem;
@@ -48,13 +87,13 @@
 .content__prev-price {
   font-size: 1rem;
   line-height: 26px;
-  color: hsl(220deg, 14%, 75%);
+  color: #b6bcc8;
   font-weight: 700;
   text-decoration: line-through;
 }
 .content__input-container {
   width: 100%;
-  background-color: hsl(223deg, 64%, 98%);
+  background-color: #f7f8fd;
   border: 0;
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -62,6 +101,18 @@
   align-items: center;
   border-radius: 10px;
   margin-bottom: 1rem;
+}
+@media screen and (min-width: 62.5em) {
+  .content__input-container {
+    margin-bottom: 0;
+    margin-right: 1rem;
+    max-width: 9.8125rem;
+  }
+}
+@media screen and (min-width: 62.5em) {
+  .content__form {
+    display: flex;
+  }
 }
 
 input[type=number] {
@@ -96,6 +147,11 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
   box-shadow: 0px 20px 50px -20px hsl(26deg, 100%, 55%);
   border-radius: 10px;
+}
+@media screen and (min-width: 62.5em) {
+  .cart-btn {
+    box-shadow: none;
+  }
 }
 .cart-btn svg path {
   fill: #fff;

@@ -24,6 +24,12 @@ body {
   line-height: 24px;
   max-width: 100%;
   min-height: 100vh;
+  @include mixins.mq(tablet) {
+    padding: 1.75rem 6rem 8.25rem 6rem;
+  }
+  @include mixins.mq(desktop) {
+    padding: 1.75rem 10.3125rem 8.25rem 10.3125rem;
+  }
 }
 
 img {
@@ -60,7 +66,12 @@ button {
 .wrapper {
   padding: 0 1.5rem;
 }
-
 .main {
   position: relative; // for CartModal
+  @include mixins.mq(tablet) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5.625rem 3rem 0 3rem;
+  }
 }
