@@ -10,7 +10,7 @@ import p2 from '../assets/image-product-2.jpg';
 import p3 from '../assets/image-product-3.jpg';
 import p4 from '../assets/image-product-4.jpg';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 export default function Hero() {
   const thumbsImages = [
@@ -30,10 +30,13 @@ export default function Hero() {
   };
 
   const mainRef = useRef<Splide>(null);
+  const [clickedThumb, setClickedThumb] = useState<number>();
+
   const handleThumbs = (id: number) => {
     if (mainRef.current) {
       mainRef.current.go(id);
     }
+    setClickedThumb(id);
   };
 
   return (
@@ -56,7 +59,14 @@ export default function Hero() {
       <ul className="thumbnails">
         {thumbsImages.map((thumbnail, index) => (
           <li>
-            <button onClick={() => handleThumbs(index)}>
+            <button
+              onClick={() => handleThumbs(index)}
+              className={
+                clickedThumb === index
+                  ? `thumbnails-btn active btn-${index}`
+                  : `thumbnails-btn btn-${index}`
+              }
+            >
               <img src={thumbnail} alt="product thumbnail" />
             </button>
           </li>

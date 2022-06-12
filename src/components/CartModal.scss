@@ -11,6 +11,12 @@
   z-index: 2;
   border-radius: 10px;
   box-shadow: 0px 20px 50px -20px rgba(0, 0, 0, 0.4);
+  @include mixins.mq(tablet) {
+    width: 22.5rem;
+    top: -1.125rem;
+    right: -4.75rem;
+    left: auto;
+  }
   &__title {
     font-size: 1rem;
     font-weight: variables.$font-weight-bold;

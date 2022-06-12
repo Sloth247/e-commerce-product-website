@@ -80,6 +80,8 @@ button {
     align-items: center;
     justify-content: space-between;
     padding: 5.625rem 3rem 0 3rem;
+    max-width: 69.375rem;
+    margin: 0 auto;
   }
 }
 

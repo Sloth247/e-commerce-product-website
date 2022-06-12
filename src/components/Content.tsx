@@ -1,5 +1,5 @@
-import MinusIcon from '../assets/icon-minus.svg';
-import PlusIcon from '../assets/icon-plus.svg';
+import MinusIcon from '../components/MinusIcon';
+import PlusIcon from '../components/PlusIcon';
 import Cart from './Cart';
 import './Content.scss';
 
@@ -47,7 +47,7 @@ export default function Content({
             <span className="sr-only" aria-labelledby="minus">
               decrease amount
             </span>
-            <img src={MinusIcon} alt="minus" id="minus" />
+            <MinusIcon />
           </button>
           <input
             type="number"
@@ -67,7 +67,7 @@ export default function Content({
             <span className="sr-only" aria-labelledby="plus">
               increase amount
             </span>
-            <img src={PlusIcon} alt="plus" id="plus" />
+            <PlusIcon />
           </button>
         </div>
         <button type="submit" className="cart-btn">

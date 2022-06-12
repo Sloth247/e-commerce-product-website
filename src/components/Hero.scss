@@ -11,6 +11,7 @@
   background-position: top center;
   width: 18.75rem;
   height: 18.75rem;
+
   @include mixins.mq(desktop) {
     width: 27.8125rem;
     height: 27.8125rem;
@@ -62,11 +63,98 @@
   & li {
     height: 5.5rem;
     width: 5.5rem;
+    position: relative;
+
     & img {
       width: 5.5rem;
       display: block;
       border-radius: 10px;
       object-fit: cover;
     }
+  }
+  &-btn:hover::before,
+  &-btn:focus::before {
+    content: '';
+    width: 5.5rem;
+    height: 5.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+  }
+
+  &-btn.active {
+    &::after {
+      content: '';
+      width: 92px;
+      height: 92px;
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: 0;
+      bottom: 0;
+      background: variables.$color-orange;
+      z-index: -1;
+      border-radius: 10px;
+    }
+    &::before {
+      content: '';
+      width: 5.5rem;
+      height: 5.5rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(255, 255, 255, 0.5);
+      border-radius: 10px;
+    }
+  }
+
+  &-btn.btn-0:hover::before,
+  &-btn.btn-0:focus::before {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url('../assets/image-product-1-thumbnail.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &-btn.btn-1:hover::before,
+  &-btn.btn-1:focus::before {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url('../assets/image-product-2-thumbnail.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &-btn.btn-2:hover::before,
+  &-btn.btn-2:focus::before {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url('../assets/image-product-3-thumbnail.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  &-btn.btn-3:hover::before,
+  &-btn.btn-3:focus::before {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url('../assets/image-product-4-thumbnail.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }

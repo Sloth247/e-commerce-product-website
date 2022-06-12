@@ -6,6 +6,7 @@
   padding-bottom: 5.5rem;
 
   @include mixins.mq(tablet) {
+    margin-left: 2rem;
     align-self: center;
     padding: 0;
   }
@@ -29,7 +30,7 @@
     line-height: 2rem;
     margin-top: 1.1875rem;
     margin-bottom: 1.9375rem;
-    @include mixins.mq(desktop) {
+    @include mixins.mq(large) {
       font-size: 2.75rem;
       line-height: 48px;
       margin-top: 1.6875rem;
@@ -143,5 +144,21 @@ input[type='number']::-webkit-outer-spin-button {
   }
   & svg {
     margin-right: 1rem;
+  }
+  &:hover,
+  &:focus {
+    background-color: #ffab6a;
+  }
+}
+.minus-btn {
+  &:hover > svg use,
+  &:focus > svg use {
+    fill: #ffab6a;
+  }
+}
+.plus-btn {
+  &:hover > svg use,
+  &:focus > svg use {
+    fill: #ffab6a;
   }
 }

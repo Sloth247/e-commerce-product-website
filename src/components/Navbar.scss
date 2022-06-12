@@ -36,6 +36,7 @@
       font-size: 1.125rem;
       font-weight: variables.$font-weight-bold;
       margin-bottom: 1.25rem;
+      position: relative;
       @include mixins.mq(tablet) {
         margin-bottom: 0;
         font-size: 0.9375rem;
@@ -44,6 +45,25 @@
         color: variables.$color-dark-grayish-blue;
         &:not(:last-child) {
           margin-right: 2rem;
+        }
+      }
+      &:hover,
+      &:focus {
+        @include mixins.mq(tablet) {
+          color: #1d2026;
+        }
+      }
+      &:hover::after,
+      &:focus::after {
+        @include mixins.mq(tablet) {
+          content: '';
+          width: 100%;
+          height: 4px;
+          background-color: variables.$color-orange;
+          position: absolute;
+          bottom: -2.85rem;
+          left: 0;
+          right: 0;
         }
       }
     }
@@ -69,9 +89,26 @@
     align-items: center;
     justify-content: center;
     margin-left: 1.38625rem;
+    position: relative;
+
     @include mixins.mq(tablet) {
       width: 3.125rem;
       margin-left: 2.875rem;
+    }
+    &:hover::before,
+    &:focus::before {
+      content: '';
+      background-color: variables.$color-orange;
+      width: 54px;
+      height: 54px;
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+      left: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      border-radius: 50%;
     }
   }
 }

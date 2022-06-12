@@ -4,6 +4,7 @@
 }
 @media screen and (min-width: 34em) {
   .content {
+    margin-left: 2rem;
     align-self: center;
     padding: 0;
   }
@@ -33,7 +34,7 @@
   margin-top: 1.1875rem;
   margin-bottom: 1.9375rem;
 }
-@media screen and (min-width: 62.5em) {
+@media screen and (min-width: 80em) {
   .content__product-name {
     font-size: 2.75rem;
     line-height: 48px;
@@ -158,6 +159,17 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .cart-btn svg {
   margin-right: 1rem;
+}
+.cart-btn:hover, .cart-btn:focus {
+  background-color: #ffab6a;
+}
+
+.minus-btn:hover > svg use, .minus-btn:focus > svg use {
+  fill: #ffab6a;
+}
+
+.plus-btn:hover > svg use, .plus-btn:focus > svg use {
+  fill: #ffab6a;
 }
 
 /*# sourceMappingURL=Content.css.map */

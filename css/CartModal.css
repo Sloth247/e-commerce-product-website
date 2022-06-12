@@ -9,6 +9,14 @@
   border-radius: 10px;
   box-shadow: 0px 20px 50px -20px rgba(0, 0, 0, 0.4);
 }
+@media screen and (min-width: 34em) {
+  .cart-modal {
+    width: 22.5rem;
+    top: -1.125rem;
+    right: -4.75rem;
+    left: auto;
+  }
+}
 .cart-modal__title {
   font-size: 1rem;
   font-weight: 700;
