@@ -1,0 +1,16 @@
+.close-btn svg path {
+  fill: #fff;
+}
+
+.hero-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background: #69707d;
+}
+
+/*# sourceMappingURL=HeroModal.css.map */

@@ -29,6 +29,10 @@
   }
 }
 
+.splide__track--nav > .splide__list > .splide__slide.is-active {
+  border: 3px solid transparent;
+}
+
 .splide__arrow--prev,
 .splide__arrow--next {
   width: 2.5rem;
