@@ -2,21 +2,17 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Options } from '@splidejs/splide';
 import '@splidejs/react-splide/css';
 
-import p1 from '../assets/image-product-1.jpg';
-import p2 from '../assets/image-product-2.jpg';
-import p3 from '../assets/image-product-3.jpg';
-import p4 from '../assets/image-product-4.jpg';
-
 import './HeroModal.scss';
-import './Hero.scss';
 
 import { useState } from 'react';
 import CloseIcon from './CloseIcon';
 
 export default function HeroModal({
   modalRef,
+  setModalExpanded,
 }: {
   modalRef: React.RefObject<Splide>;
+  setModalExpanded: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const modalOptions: Options = {
     type: 'loop',
@@ -26,6 +22,12 @@ export default function HeroModal({
     autoWidth: false,
     pagination: false,
   };
+  const ModalImages = [
+    require('../assets/image-product-1.jpg'),
+    require('../assets/image-product-2.jpg'),
+    require('../assets/image-product-3.jpg'),
+    require('../assets/image-product-4.jpg'),
+  ];
   const thumbsImages = [
     require('../assets/image-product-1-thumbnail.jpg'),
     require('../assets/image-product-2-thumbnail.jpg'),
@@ -41,44 +43,42 @@ export default function HeroModal({
     }
     setClickedThumb(id);
   };
+  const handleModalClose = () => {
+    setModalExpanded(false);
+  };
 
   return (
     <div className="hero-modal" id="hero-modal">
-      <button className="close-btn">
-        <CloseIcon />
-      </button>
-      <div className="hero-modal__slide-container">
-        <Splide options={modalOptions} ref={modalRef}>
-          <SplideSlide>
-            <img src={p1} alt="product image 1" />
-          </SplideSlide>
-          <SplideSlide>
-            <img src={p2} alt="product image 2" />
-          </SplideSlide>
-          <SplideSlide>
-            <img src={p3} alt="product image 3" />
-          </SplideSlide>
-          <SplideSlide>
-            <img src={p4} alt="product image 4" />
-          </SplideSlide>
-        </Splide>
+      <div className="hero-modal__inner">
+        <button className="close-btn" onClick={handleModalClose}>
+          <CloseIcon />
+        </button>
+        <div className="hero-modal__slide-container">
+          <Splide options={modalOptions} ref={modalRef}>
+            {ModalImages.map((image, index) => (
+              <SplideSlide key={index}>
+                <img src={image} alt={`product image ${index}`} />
+              </SplideSlide>
+            ))}
+          </Splide>
 
-        <ul className="thumbnails">
-          {thumbsImages.map((thumbnail, index) => (
-            <li key={index}>
-              <button
-                onClick={() => handleThumbs(index)}
-                className={
-                  clickedThumb === index
-                    ? `thumbnails-btn active btn-${index}`
-                    : `thumbnails-btn btn-${index}`
-                }
-              >
-                <img src={thumbnail} alt="product thumbnail" />
-              </button>
-            </li>
-          ))}
-        </ul>
+          <ul className="thumbnails">
+            {thumbsImages.map((thumbnail, index) => (
+              <li key={index}>
+                <button
+                  onClick={() => handleThumbs(index)}
+                  className={
+                    clickedThumb === index
+                      ? `thumbnails-btn active btn-${index}`
+                      : `thumbnails-btn btn-${index}`
+                  }
+                >
+                  <img src={thumbnail} alt="product thumbnail" />
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

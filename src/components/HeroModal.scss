@@ -1,4 +1,10 @@
+@use '../sass/mixins.scss';
+@use '../sass/variables';
+
 .close-btn {
+  margin-bottom: 1.5rem;
+  transform: scale(1.44);
+
   & svg path {
     fill: #fff;
   }
@@ -7,10 +13,46 @@
   position: fixed;
   top: 0;
   left: 0;
-
   width: 100vw;
   min-height: 100vh;
   display: grid;
   place-content: center;
   background: #69707d;
+  &__inner {
+    max-width: 34.375rem;
+    margin: 0 auto;
+    text-align: right;
+  }
+}
+.hero-modal .splide__slide {
+  @include mixins.mq(tablet) {
+    width: 34.375rem;
+    height: 34.375rem;
+  }
+}
+.hero-modal .thumbnails {
+  @include mixins.mq(tablet) {
+    margin: 2.5rem 3.3125rem;
+  }
+}
+.hero-modal .splide__arrow--prev,
+.hero-modal .splide__arrow--next {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  color: transparent;
+  opacity: 1;
+  display: block;
+}
+.hero-modal .splide__arrow--prev {
+  background: url('../assets/icon-previous.svg'), variables.$color-white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  left: -1.5rem;
+}
+.hero-modal .splide__arrow--next {
+  background: url('../assets/icon-next.svg'), variables.$color-white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  right: -1.5rem;
 }

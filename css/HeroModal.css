@@ -1,3 +1,7 @@
+.close-btn {
+  margin-bottom: 1.5rem;
+  transform: scale(1.44);
+}
 .close-btn svg path {
   fill: #fff;
 }
@@ -11,6 +15,48 @@
   display: grid;
   place-content: center;
   background: #69707d;
+}
+.hero-modal__inner {
+  max-width: 34.375rem;
+  margin: 0 auto;
+  text-align: right;
+}
+
+@media screen and (min-width: 34em) {
+  .hero-modal .splide__slide {
+    width: 34.375rem;
+    height: 34.375rem;
+  }
+}
+
+@media screen and (min-width: 34em) {
+  .hero-modal .thumbnails {
+    margin: 2.5rem 3.3125rem;
+  }
+}
+
+.hero-modal .splide__arrow--prev,
+.hero-modal .splide__arrow--next {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  color: transparent;
+  opacity: 1;
+  display: block;
+}
+
+.hero-modal .splide__arrow--prev {
+  background: url("../assets/icon-previous.svg"), hsl(0deg, 0%, 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  left: -1.5rem;
+}
+
+.hero-modal .splide__arrow--next {
+  background: url("../assets/icon-next.svg"), hsl(0deg, 0%, 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  right: -1.5rem;
 }
 
 /*# sourceMappingURL=HeroModal.css.map */

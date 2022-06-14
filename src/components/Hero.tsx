@@ -5,15 +5,16 @@ import '@splidejs/react-splide/css';
 
 import './Hero.scss';
 
-import p1 from '../assets/image-product-1.jpg';
-import p2 from '../assets/image-product-2.jpg';
-import p3 from '../assets/image-product-3.jpg';
-import p4 from '../assets/image-product-4.jpg';
-
 import { useEffect, useRef, useState } from 'react';
 import HeroModal from './HeroModal';
 
 export default function Hero() {
+  const MainImages = [
+    require('../assets/image-product-1.jpg'),
+    require('../assets/image-product-2.jpg'),
+    require('../assets/image-product-3.jpg'),
+    require('../assets/image-product-4.jpg'),
+  ];
   const thumbsImages = [
     require('../assets/image-product-1-thumbnail.jpg'),
     require('../assets/image-product-2-thumbnail.jpg'),
@@ -22,7 +23,7 @@ export default function Hero() {
   ];
 
   const mainOptions: Options = {
-    type: 'loop',
+    type: 'slide',
     perPage: 1,
     perMove: 1,
     gap: 0,
@@ -44,11 +45,14 @@ export default function Hero() {
     setClickedThumb(id);
   };
 
-  const handleSlideClick = () => {
-    setModalExpanded(true);
+  useEffect(() => {
     if (mainRef.current && modalRef.current && mainRef.current.splide) {
       modalRef.current.sync(mainRef.current.splide);
     }
+  }, [mainRef.current]);
+
+  const handleSlideClick = () => {
+    setModalExpanded(true);
   };
 
   return (
@@ -61,18 +65,11 @@ export default function Hero() {
           aria-expanded={modalExpanded}
           aria-controls="hero-modal"
         >
-          <SplideSlide>
-            <img src={p1} alt="product image 1" />
-          </SplideSlide>
-          <SplideSlide>
-            <img src={p2} alt="product image 2" />
-          </SplideSlide>
-          <SplideSlide>
-            <img src={p3} alt="product image 3" />
-          </SplideSlide>
-          <SplideSlide>
-            <img src={p4} alt="product image 4" />
-          </SplideSlide>
+          {MainImages.map((image, index) => (
+            <SplideSlide key={index}>
+              <img src={image} alt={`product image ${index}`} />
+            </SplideSlide>
+          ))}
         </Splide>
 
         <ul className="thumbnails">
@@ -92,7 +89,9 @@ export default function Hero() {
           ))}
         </ul>
       </section>
-      {modalExpanded && <HeroModal modalRef={modalRef} />}
+      {modalExpanded && (
+        <HeroModal modalRef={modalRef} setModalExpanded={setModalExpanded} />
+      )}
     </>
   );
 }
