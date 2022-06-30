@@ -4,15 +4,24 @@ import '@splidejs/react-splide/css';
 
 import './HeroModal.scss';
 
-import { useState } from 'react';
 import CloseIcon from './CloseIcon';
 
 export default function HeroModal({
   modalRef,
+  modalExpanded,
   setModalExpanded,
+  clickedModalThumb,
+  setClickedModalThumb,
+  setClickedThumb,
 }: {
   modalRef: React.RefObject<Splide>;
+  modalExpanded: boolean;
   setModalExpanded: React.Dispatch<React.SetStateAction<boolean>>;
+  clickedModalThumb: number | undefined;
+  setClickedModalThumb: React.Dispatch<
+    React.SetStateAction<number | undefined>
+  >;
+  setClickedThumb: React.Dispatch<React.SetStateAction<number>>;
 }) {
   const modalOptions: Options = {
     type: 'loop',
@@ -35,26 +44,35 @@ export default function HeroModal({
     require('../assets/image-product-4-thumbnail.jpg'),
   ];
 
-  const [clickedThumb, setClickedThumb] = useState<number>();
-
-  const handleThumbs = (id: number) => {
+  const handleModalThumbs = (id: number) => {
     if (modalRef.current) {
       modalRef.current.go(id);
     }
     setClickedThumb(id);
+    // setClickedModalThumb(id);
   };
   const handleModalClose = () => {
     setModalExpanded(false);
   };
 
+  const handleMove = () => {
+    if (modalRef.current && modalRef.current.splide) {
+      setClickedModalThumb(modalRef.current.splide.index);
+      setClickedThumb(modalRef.current.splide.index);
+    }
+  };
+
   return (
-    <div className="hero-modal" id="hero-modal">
+    <div
+      className={modalExpanded ? 'hero-modal active' : 'hero-modal'}
+      id="hero-modal"
+    >
       <div className="hero-modal__inner">
         <button className="close-btn" onClick={handleModalClose}>
           <CloseIcon />
         </button>
         <div className="hero-modal__slide-container">
-          <Splide options={modalOptions} ref={modalRef}>
+          <Splide options={modalOptions} ref={modalRef} onMove={handleMove}>
             {ModalImages.map((image, index) => (
               <SplideSlide key={index}>
                 <img src={image} alt={`product image ${index}`} />
@@ -66,9 +84,9 @@ export default function HeroModal({
             {thumbsImages.map((thumbnail, index) => (
               <li key={index}>
                 <button
-                  onClick={() => handleThumbs(index)}
+                  onClick={() => handleModalThumbs(index)}
                   className={
-                    clickedThumb === index
+                    clickedModalThumb === index
                       ? `thumbnails-btn active btn-${index}`
                       : `thumbnails-btn btn-${index}`
                   }

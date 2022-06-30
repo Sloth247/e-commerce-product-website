@@ -5,7 +5,7 @@ import '@splidejs/react-splide/css';
 
 import './Hero.scss';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import HeroModal from './HeroModal';
 
 export default function Hero() {
@@ -35,7 +35,8 @@ export default function Hero() {
   const mainRef = useRef<Splide>(null);
   const modalRef = useRef<Splide>(null);
 
-  const [clickedThumb, setClickedThumb] = useState<number>();
+  const [clickedThumb, setClickedThumb] = useState<number>(0);
+  const [clickedModalThumb, setClickedModalThumb] = useState<number>();
   const [modalExpanded, setModalExpanded] = useState<boolean>(false);
 
   const handleThumbs = (id: number) => {
@@ -45,14 +46,19 @@ export default function Hero() {
     setClickedThumb(id);
   };
 
-  useEffect(() => {
-    if (mainRef.current && modalRef.current && mainRef.current.splide) {
-      modalRef.current.sync(mainRef.current.splide);
-    }
-  }, [mainRef.current]);
-
   const handleSlideClick = () => {
     setModalExpanded(true);
+    if (
+      mainRef.current &&
+      modalRef.current &&
+      mainRef.current.splide &&
+      modalRef.current.splide
+    ) {
+      modalRef.current.sync(mainRef.current.splide);
+      setClickedModalThumb(mainRef.current.splide.index);
+    }
+    console.log(mainRef.current);
+    console.log(modalRef.current);
   };
 
   return (
@@ -89,9 +95,15 @@ export default function Hero() {
           ))}
         </ul>
       </section>
-      {modalExpanded && (
-        <HeroModal modalRef={modalRef} setModalExpanded={setModalExpanded} />
-      )}
+
+      <HeroModal
+        modalRef={modalRef}
+        setModalExpanded={setModalExpanded}
+        modalExpanded={modalExpanded}
+        clickedModalThumb={clickedModalThumb}
+        setClickedThumb={setClickedThumb}
+        setClickedModalThumb={setClickedModalThumb}
+      />
     </>
   );
 }
