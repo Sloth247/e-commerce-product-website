@@ -6,15 +6,18 @@ import Avatar from '../assets/image-avatar.png';
 
 import './Navbar.scss';
 import { useState } from 'react';
+import CartModal from './CartModal';
 
 export default function Navbar({
   cartExpanded,
   setCartExpanded,
   cartAmount,
+  setCartAmount,
 }: {
   cartExpanded: boolean;
   setCartExpanded: React.Dispatch<React.SetStateAction<boolean>>;
   cartAmount: number;
+  setCartAmount: React.Dispatch<React.SetStateAction<number>>;
 }) {
   const urlHome = '#';
   const [expanded, setExpanded] = useState<boolean>(false);
@@ -57,9 +60,14 @@ export default function Navbar({
             setCartExpanded={setCartExpanded}
             cartAmount={cartAmount}
           />
-          <div className="nav__avatar-container">
+          {cartExpanded ? (
+            <CartModal cartAmount={cartAmount} setCartAmount={setCartAmount} />
+          ) : (
+            ''
+          )}
+          <button className="nav__avatar-container">
             <img src={Avatar} alt="user" />
-          </div>
+          </button>
         </div>
       </nav>
     </div>

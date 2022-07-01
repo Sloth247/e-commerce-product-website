@@ -23,7 +23,7 @@ export default function Hero() {
   ];
 
   const mainOptions: Options = {
-    type: 'slide',
+    type: 'loop',
     perPage: 1,
     perMove: 1,
     gap: 0,

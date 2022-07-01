@@ -21,13 +21,16 @@ body {
   font-family: variables.$font-primary;
   font-size: 0.9375rem;
   font-weight: variables.$font-weight-regular;
-  line-height: 24px;
+
   max-width: 100%;
   min-height: 100vh;
   @include mixins.mq(tablet) {
-    padding: 1.75rem 6rem 8.25rem 6rem;
+    padding: 1.75rem 3rem 8.25rem 3rem;
   }
   @include mixins.mq(desktop) {
+    padding: 1.75rem 6rem 8.25rem 6rem;
+  }
+  @include mixins.mq(large) {
     padding: 1.75rem 10.3125rem 8.25rem 10.3125rem;
   }
 }
@@ -72,8 +75,20 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5.625rem 3rem 0 3rem;
+    padding: 5.625rem 1rem 0 1rem;
     max-width: 69.375rem;
     margin: 0 auto;
+  }
+  @include mixins.mq(desktop) {
+    padding: 5.625rem 3rem 0 3rem;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 1rem;
+  & a {
+    color: hsl(228, 45%, 44%);
   }
 }

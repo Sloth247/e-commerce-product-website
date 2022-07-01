@@ -2,6 +2,12 @@
 @use '../sass/variables';
 
 .hero-container {
+  @include mixins.mq(tablet) {
+    max-width: 22rem;
+  }
+  @include mixins.mq(desktop) {
+    max-width: 25rem;
+  }
   @include mixins.mq(large) {
     max-width: 27.8125rem;
   }
@@ -11,8 +17,17 @@
   background-position: top center;
   width: 18.75rem;
   height: 18.75rem;
-
+  @include mixins.mq(tablet) {
+    width: 22rem;
+    height: 22rem;
+  }
   @include mixins.mq(desktop) {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 15px;
+  }
+
+  @include mixins.mq(large) {
     width: 27.8125rem;
     height: 27.8125rem;
     border-radius: 15px;
@@ -65,35 +80,45 @@
     margin-top: 2rem;
   }
   & li {
-    height: 5.5rem;
-    width: 5.5rem;
+    height: 4.2rem;
+    width: 4.2rem;
     position: relative;
-
-    & img {
+    @include mixins.mq(desktop) {
+      height: 5.5rem;
       width: 5.5rem;
+    }
+    & img {
+      width: 4.2rem;
       display: block;
       border-radius: 10px;
       object-fit: cover;
+      @include mixins.mq(desktop) {
+        width: 5.5rem;
+      }
     }
   }
   &-btn:hover::before,
   &-btn:focus::before {
     content: '';
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 4.2rem;
+    height: 4.2rem;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     border-radius: 10px;
+    @include mixins.mq(desktop) {
+      width: 5.5rem;
+      height: 5.5rem;
+    }
   }
 
   &-btn.active {
     &::after {
       content: '';
-      width: 92px;
-      height: 92px;
+      width: 71.2px;
+      height: 71.2px;
       position: absolute;
       top: -2px;
       left: -2px;
@@ -102,11 +127,15 @@
       background: variables.$color-orange;
       z-index: -1;
       border-radius: 10px;
+      @include mixins.mq(desktop) {
+        width: 92px;
+        height: 92px;
+      }
     }
     &::before {
       content: '';
-      width: 5.5rem;
-      height: 5.5rem;
+      width: 4.2rem;
+      height: 4.2rem;
       position: absolute;
       top: 0;
       left: 0;
@@ -114,6 +143,10 @@
       bottom: 0;
       background: rgb(255, 255, 255, 0.5);
       border-radius: 10px;
+      @include mixins.mq(desktop) {
+        width: 5.5rem;
+        height: 5.5rem;
+      }
     }
   }
 

@@ -17,6 +17,9 @@
     @include mixins.mq(tablet) {
       display: flex;
       align-items: center;
+      margin-left: 2rem;
+    }
+    @include mixins.mq(desktop) {
       margin-left: 3.5rem;
     }
     &.active {
@@ -43,7 +46,13 @@
         line-height: 26px;
         font-weight: variables.$font-weight-regular;
         color: variables.$color-dark-grayish-blue;
-        &:not(:last-child) {
+      }
+      &:not(:last-child) {
+        @include mixins.mq(tablet) {
+          margin-right: 1rem;
+        }
+
+        @include mixins.mq(desktop) {
           margin-right: 2rem;
         }
       }
@@ -82,6 +91,9 @@
     & svg path {
       fill: variables.$color-black;
     }
+    @include mixins.mq(tablet) {
+      position: relative;
+    }
   }
   &__avatar-container {
     width: 1.5rem;
@@ -90,17 +102,21 @@
     justify-content: center;
     margin-left: 1.38625rem;
     position: relative;
+    transition: all 0.2 ease;
 
     @include mixins.mq(tablet) {
       width: 3.125rem;
+      margin-left: 1.5rem;
+    }
+    @include mixins.mq(desktop) {
       margin-left: 2.875rem;
     }
     &:hover::before,
     &:focus::before {
       content: '';
       background-color: variables.$color-orange;
-      width: 54px;
-      height: 54px;
+      width: 26px;
+      height: 26px;
       position: absolute;
       top: 50%;
       bottom: 50%;
@@ -109,6 +125,10 @@
       transform: translate(-50%, -50%);
       z-index: -1;
       border-radius: 50%;
+      @include mixins.mq(tablet) {
+        width: 54px;
+        height: 54px;
+      }
     }
   }
 }

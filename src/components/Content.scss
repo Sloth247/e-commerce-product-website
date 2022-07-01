@@ -9,6 +9,10 @@
     margin-left: 2rem;
     align-self: center;
     padding: 0;
+    min-width: 15rem;
+  }
+  @include mixins.mq(desktop) {
+    margin-left: 4rem;
   }
   @include mixins.mq(large) {
     max-width: 27.8125rem;
@@ -93,14 +97,15 @@
     align-items: center;
     border-radius: 10px;
     margin-bottom: 1rem;
-    @include mixins.mq(desktop) {
+
+    @include mixins.mq(middle) {
       margin-bottom: 0;
       margin-right: 1rem;
       max-width: 9.8125rem;
     }
   }
   &__form {
-    @include mixins.mq(desktop) {
+    @include mixins.mq(middle) {
       display: flex;
     }
   }

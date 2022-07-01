@@ -19,6 +19,13 @@ export default function Content({
     setCartAmount(cartAmount + amount);
     setAmount(0);
   };
+  const handleInput = () => {
+    if (amount < 1) {
+      setAmount(0);
+    } else {
+      setAmount(amount - 1);
+    }
+  };
   return (
     <section className="content wrapper">
       <h2 className="content__brand">Sneaker Company</h2>
@@ -37,13 +44,7 @@ export default function Content({
       </div>
       <form className="content__form" onSubmit={handleSubmit}>
         <div className="content__input-container">
-          <button
-            type="button"
-            className="minus-btn"
-            onClick={() => {
-              setAmount(amount - 1);
-            }}
-          >
+          <button type="button" className="minus-btn" onClick={handleInput}>
             <span className="sr-only" aria-labelledby="minus">
               decrease amount
             </span>

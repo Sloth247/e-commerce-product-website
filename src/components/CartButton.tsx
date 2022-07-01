@@ -1,4 +1,3 @@
-import CartIcon from '../assets/icon-cart.svg';
 import Cart from './Cart';
 
 export default function CartButton({

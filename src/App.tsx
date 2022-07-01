@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.scss';
-import CartModal from './components/CartModal';
+
 import Content from './components/Content';
 import Hero from './components/Hero';
 
@@ -18,6 +18,7 @@ function App() {
           cartExpanded={cartExpanded}
           setCartExpanded={setCartExpanded}
           cartAmount={cartAmount}
+          setCartAmount={setCartAmount}
         />
       </header>
       <main className="main">
@@ -29,11 +30,6 @@ function App() {
           cartAmount={cartAmount}
           setCartAmount={setCartAmount}
         />
-        {cartExpanded ? (
-          <CartModal cartAmount={cartAmount} setCartAmount={setCartAmount} />
-        ) : (
-          ''
-        )}
       </main>
       <footer className="footer">
         <div className="attribution">
