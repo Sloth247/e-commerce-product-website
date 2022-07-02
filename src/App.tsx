@@ -11,6 +11,7 @@ function App() {
   // console.log(amount);
   const [cartAmount, setCartAmount] = useState<number>(0);
   const [cartExpanded, setCartExpanded] = useState<boolean>(false);
+
   return (
     <div className="App">
       <header className="header">
