@@ -50,6 +50,9 @@ export default function Content({
             </span>
             <MinusIcon />
           </button>
+          <label htmlFor="amount" className="sr-only">
+            Input amount
+          </label>
           <input
             type="number"
             name="amount"
