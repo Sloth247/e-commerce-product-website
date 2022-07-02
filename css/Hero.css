@@ -15,7 +15,7 @@
 }
 
 .splide__slide {
-  background-size: contain;
+  background-size: cover;
   background-position: top center;
   width: 18.75rem;
   height: 18.75rem;
@@ -53,7 +53,7 @@
 }
 
 .splide__track--nav > .splide__list > .splide__slide.is-active {
-  border: 3px solid transparent;
+  border: none;
 }
 
 .splide__arrow--prev,
