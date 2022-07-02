@@ -5,7 +5,6 @@ export default function Cart() {
       height="20"
       xmlns="http://www.w3.org/2000/svg"
       aria-labelledby="cart-svg"
-      className="cart-img"
     >
       <title id="cart-svg">cart icon</title>
       <path
