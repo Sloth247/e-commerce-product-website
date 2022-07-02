@@ -13,7 +13,7 @@ export default function CartModal({
     setCartAmount(0);
   };
   return (
-    <div className="cart-modal" id="cart">
+    <div className="cart-modal" id="cart-modal">
       <h2 className="cart-modal__title">Cart</h2>
       <div className="cart-modal__container">
         {cartAmount === 0 ? (

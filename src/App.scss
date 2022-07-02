@@ -21,7 +21,6 @@ body {
   font-family: variables.$font-primary;
   font-size: 0.9375rem;
   font-weight: variables.$font-weight-regular;
-
   max-width: 100%;
   min-height: 100vh;
   @include mixins.mq(tablet) {

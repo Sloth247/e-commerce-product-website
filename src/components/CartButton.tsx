@@ -16,7 +16,7 @@ export default function CartButton({
     <button
       className="cart-icon"
       aria-expanded={cartExpanded}
-      aria-controls="cart"
+      aria-controls="cart-modal"
       onClick={handleCartButton}
     >
       <Cart />

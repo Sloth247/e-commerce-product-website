@@ -64,6 +64,7 @@ export default function Hero() {
   return (
     <>
       <section className="hero-container">
+        <h1 className="sr-only">This is slider of product images</h1>
         <Splide
           options={mainOptions}
           ref={mainRef}
