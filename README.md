@@ -81,7 +81,7 @@ export default function PlusIcon() {
 }
 ```
 
-`min` attribute on `input` did not work in Content.tsx, so I used function `handleInput` to disable minus button and prevent the input amount become minus value when the amount is less than 1.
+`min` attribute on `input` did not work in Content.tsx, so I used function `handleInput` to disable minus button and prevent the input amount from becoming minus value when the amount is less than 1.
 
 ```jsx
 const handleInput = () => {
